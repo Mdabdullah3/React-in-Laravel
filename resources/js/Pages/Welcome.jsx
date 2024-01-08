@@ -1,11 +1,12 @@
 import Banner from "@/Components/Home/Banner";
+import Navbar from "@/Components/shared/Navbar";
 import { Link, Head } from "@inertiajs/react";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Head title="Welcome" />
-            <div className="">
+            {/* <div className="">
                 <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-end">
                     {auth.user ? (
                         <Link
@@ -32,7 +33,8 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         </>
                     )}
                 </div>
-            </div>
+            </div> */}
+            <Navbar auth={auth} />
             <Banner />
         </>
     );
