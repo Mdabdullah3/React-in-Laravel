@@ -5,7 +5,8 @@ import "swiper/css";
 import { Autoplay, Pagination } from "swiper/modules";
 import { ProductData } from "./ProductsData";
 import { ImCart } from "react-icons/im";
-const Products = () => {
+const Products = ({ products }) => {
+    console.log(products);
     return (
         <div className="mt-20 relative">
             <div className="w-11/12 mx-auto">

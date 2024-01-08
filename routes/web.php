@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -38,5 +39,10 @@ Route::middleware('auth')->group(function () {
 
 
 Route::resource('categories', CategoryController::class);
+
+Route::get('/products', [ProductController::class, 'index'])->name('Products.index');
+Route::get('/', [ProductController::class, 'welcome'])->name('Welcome');
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('Products.show');
+
 
 require __DIR__ . '/auth.php';
