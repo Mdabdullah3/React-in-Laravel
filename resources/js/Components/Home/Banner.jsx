@@ -25,7 +25,7 @@ export default function Banner() {
         },
     ];
     return (
-        <div className="mt-3 w-10/12 mx-auto mb-10">
+        <div className="mt-3 w-10/12 mx-auto mb-10 relative">
             <Swiper
                 spaceBetween={30}
                 effect={"fade"}
@@ -34,7 +34,7 @@ export default function Banner() {
                     clickable: true,
                 }}
                 autoplay={{
-                    delay: 2500,
+                    delay: 5000,
                     disableOnInteraction: false,
                 }}
                 modules={[EffectFade, Autoplay, Navigation, Pagination]}
@@ -43,11 +43,20 @@ export default function Banner() {
                 <div className="">
                     {BannerImg?.map((item) => (
                         <SwiperSlide>
-                            <div className="">
+                            <div className="relative">
                                 <img
                                     className=" h-screen mx-auto w-full rounded-[30px]"
                                     src={item?.img}
                                 />
+                                <div className=" absolute bottom-16 left-14 text-white z-10">
+                                    <h1 className="text-lg">Highlights</h1>
+                                    <p className="mt-4 text-6xl font-bold w-5/12 uppercase">
+                                        {item?.title}
+                                    </p>
+                                    <button className="text-md px-10 py-3 text-[#00473C] bg-[#E6FF55] font-semibold rounded-full mt-4">
+                                        View Our Menu
+                                    </button>
+                                </div>
                             </div>
                         </SwiperSlide>
                     ))}
