@@ -1,7 +1,8 @@
 import Banner from "@/Components/Home/Banner";
 import Navbar from "@/Components/shared/Navbar";
-import { Link, Head } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import Products from "./Products/Products";
+import Widget from "@/Components/Home/Widget";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
@@ -10,6 +11,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             <Navbar auth={auth} />
             <Banner />
             <Products />
+            <Widget />
         </>
     );
 }

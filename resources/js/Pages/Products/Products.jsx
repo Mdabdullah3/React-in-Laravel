@@ -50,9 +50,9 @@ const Products = () => {
                                     <p className=" tracking-wider text-gray-600 text-sm w-10/12 mt-1">
                                         {item?.description?.slice(0, 60)}
                                     </p>
-                                    <div className="flex items-center justify-between w-9/12">
-                                        <h1 className="text-[#0B4E43] font-bold mt-3 tracking-wider">
-                                            Large ${item?.sprice}
+                                    <div className="flex items-center justify-between w-9/12 mb-8">
+                                        <h1 className="text-[#0B4E43] font-bold mt-3 tracking-wider text-xl">
+                                            ${item?.sprice}
                                         </h1>
                                         <button className="bg-[#E6FF55] text-[#00473C] text-md px-4 py-3 rounded-full flex items-center gap-1 mt-3">
                                             <ImCart /> Cart
