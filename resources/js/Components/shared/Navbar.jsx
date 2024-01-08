@@ -1,107 +1,40 @@
 // Navbar.js
 import React, { useState } from "react";
-import { Link } from "@inertiajs/react";
-import Dropdown from "../Dropdown";
-import NavLink from "../NavLink";
-import ApplicationLogo from "../ApplicationLogo";
-
+// import { Link } from "@inertiajs/react";
+// import NavLink from "../NavLink";
+import { PiShoppingCartSimpleLight } from "react-icons/pi";
+import { LuUser } from "react-icons/lu";
 const Navbar = ({ auth }) => {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] =
-        useState(false);
     const user = auth?.user;
     console.log(user);
     return (
-        <nav className="bg-white border-b border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16 items-center">
-                    <div className="flex items-center">
-                        <Link href="/">
-                            <ApplicationLogo className="block h-9 w-auto fill-current text-gray-800" />
-                        </Link>
-                        <NavLink
-                            href={route("dashboard")}
-                            active={route().current("dashboard")}
-                        >
-                            Dashboard
-                        </NavLink>
-                    </div>
-
-                    <div className="flex items-center space-x-4">
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            className="border rounded-md p-1"
-                        />
-                        <NavLink href="/shop" active={route().current("shop")}>
-                            Shop
-                        </NavLink>
-                        <NavLink href="/cart" active={route().current("cart")}>
-                            Cart
-                        </NavLink>
-
-                        <Dropdown>
-                            <Dropdown.Trigger>
-                                <span className="cursor-pointer inline-flex items-center">
-                                    {user.name && (
-                                        <img
-                                            src="/path-to-default-image.jpg"
-                                            alt="User Avatar"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                    )}
-                                    {!user.name && (
-                                        <svg
-                                            className="h-4 w-4"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 20 20"
-                                            fill="currentColor"
-                                        >
-                                            <path
-                                                fillRule="evenodd"
-                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                clipRule="evenodd"
-                                            />
-                                        </svg>
-                                    )}
-                                </span>
-                            </Dropdown.Trigger>
-
-                            <Dropdown.Content>
-                                {!user.name && (
-                                    <>
-                                        <Dropdown.Link href={route("login")}>
-                                            Login
-                                        </Dropdown.Link>
-                                        <Dropdown.Link href={route("register")}>
-                                            Signup
-                                        </Dropdown.Link>
-                                    </>
-                                )}
-                                {user.name && (
-                                    <>
-                                        <Dropdown.Link
-                                            href={route("profile.edit")}
-                                        >
-                                            Profile
-                                        </Dropdown.Link>
-                                        <Dropdown.Link>My Orders</Dropdown.Link>
-                                        <Dropdown.Link
-                                            href={route("dashboard")}
-                                        >
-                                            Dashboard
-                                        </Dropdown.Link>
-                                    </>
-                                )}
-                                <Dropdown.Link
-                                    href={route("logout")}
-                                    method="post"
-                                    as="button"
-                                >
-                                    Logout
-                                </Dropdown.Link>
-                            </Dropdown.Content>
-                        </Dropdown>
-                    </div>
+        <nav className="w-10/12 mx-auto">
+            <div className="flex justify-between items-center">
+                <div>
+                    <img
+                        className="w-24 h-24"
+                        src="https://grandrestaurantv6-7.b-cdn.net/clean/wp-content/uploads/sites/2/2022/09/logo.png"
+                        alt=""
+                    />
+                </div>
+                <div>
+                    <input
+                        type="search"
+                        name=""
+                        className=" bg-[#00473C] placeholder-white border-[#00473C] border-3 rounded-full px-4 py-3 w-96 mx-auto placeholder:black text-lg"
+                        placeholder="Search Your Food..."
+                        id=""
+                    />
+                </div>
+                <div className="font-bold flex gap-10 justify-center items-center list-none text-[#00473C]">
+                    <li className="text-xl tracking-wider">Our Menus</li>
+                    <li className="text-xl tracking-wider">Events </li>
+                    <li className="text-3xl font-bold">
+                        <PiShoppingCartSimpleLight />
+                    </li>
+                    <li className="text-3xl font-bold">
+                        <LuUser />
+                    </li>
                 </div>
             </div>
         </nav>

@@ -21,12 +21,12 @@ createInertiaApp({
         const root = createRoot(el);
 
         root.render(
-            <>
+            <div className="font-mono">
                 <Provider store={store}>
                     <App {...props} />
                     <ToastContainer />
                 </Provider>
-            </>
+            </div>
         );
     },
     progress: {
