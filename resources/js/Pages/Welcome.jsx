@@ -1,3 +1,4 @@
+import Banner from "@/Components/Home/Banner";
 import { Link, Head } from "@inertiajs/react";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
@@ -32,6 +33,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     )}
                 </div>
             </div>
+            <Banner />
         </>
     );
 }
