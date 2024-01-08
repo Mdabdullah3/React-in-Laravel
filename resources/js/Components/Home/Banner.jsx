@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./Swiper.css";
 import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export default function Banner() {
@@ -25,7 +25,7 @@ export default function Banner() {
         },
     ];
     return (
-        <div className="mt-3 w-10/12 mx-auto">
+        <div className="mt-3 w-10/12 mx-auto mb-10">
             <Swiper
                 spaceBetween={30}
                 effect={"fade"}
