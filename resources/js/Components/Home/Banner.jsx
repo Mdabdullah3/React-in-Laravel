@@ -48,7 +48,7 @@ export default function Banner() {
                                     className=" h-screen mx-auto w-full rounded-[30px]"
                                     src={item?.img}
                                 />
-                                <div className=" absolute bottom-16 left-14 text-white z-10">
+                                <div className=" absolute bottom-16 left-14 text-white">
                                     <h1 className="text-lg">Highlights</h1>
                                     <p className="mt-4 text-6xl font-bold w-5/12 uppercase">
                                         {item?.title}

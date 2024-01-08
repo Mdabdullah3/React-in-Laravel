@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/react";
 
 const DropdownMenu = ({ user }) => {
     return (
-        <div className="absolute top-5 -left-16 bg-[#00473C] border text-white rounded-md mt-2 py-6 px-8 w-52 transition duration-300">
+        <div className="absolute top-5 -left-16 bg-[#00473C] text-white rounded-md mt-2 py-6 px-8 w-52 transition duration-300 z-10">
             {user ? (
                 <>
                     <ul className="text-lg font-normal">
