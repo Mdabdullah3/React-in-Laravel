@@ -23,7 +23,7 @@ const Navbar = ({ auth }) => {
                     <input
                         type="search"
                         name=""
-                        className=" bg-[#00473C] placeholder-white border-[#00473C] border-3 rounded-full px-4 py-3 w-96 mx-auto placeholder:black text-lg"
+                        className="pl-5 bg-[#00473C] placeholder-white border-[#00473C] border-3 rounded-full px-4 py-3 w-96 mx-auto text-white text-lg"
                         placeholder="Search Your Food..."
                         id=""
                     />
