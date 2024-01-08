@@ -5,7 +5,7 @@ const Widget = () => {
         <div className="mt-16">
             <div className="w-10/12 mx-auto relative">
                 <img
-                    className=" rounded-3xl"
+                    className=" rounded-3xl h-[700px] w-full"
                     src="https://grandrestaurantv6-7.themegoods.com/clean/wp-content/uploads/sites/2/2022/09/eat-salads.jpg"
                     alt=""
                 />
