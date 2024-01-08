@@ -1,12 +1,14 @@
 // Navbar.js
 import React, { useState } from "react";
 // import { Link } from "@inertiajs/react";
-// import NavLink from "../NavLink";
+import NavLink from "../NavLink";
 import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import { LuUser } from "react-icons/lu";
+import DropdownMenu from "./DropdownMenu";
 const Navbar = ({ auth }) => {
     const user = auth?.user;
     console.log(user);
+    const [showDropdown, setShowDropdown] = useState(false);
     return (
         <nav className="w-10/12 mx-auto">
             <div className="flex justify-between items-center">
@@ -27,14 +29,36 @@ const Navbar = ({ auth }) => {
                     />
                 </div>
                 <div className="font-bold flex gap-10 justify-center items-center list-none text-[#00473C]">
-                    <li className="text-xl tracking-wider">Our Menus</li>
-                    <li className="text-xl tracking-wider">Events </li>
-                    <li className="text-3xl font-bold">
+                    <NavLink
+                        href="/menu"
+                        active={route().current("menu")}
+                        className="text-xl tracking-wider"
+                    >
+                        Our Menus
+                    </NavLink>
+                    <NavLink
+                        href="/event"
+                        active={route().current("event")}
+                        className="text-xl tracking-wider"
+                    >
+                        Events{" "}
+                    </NavLink>
+                    <NavLink
+                        href="/cart"
+                        active={route().current("cart")}
+                        className="text-3xl font-bold"
+                    >
                         <PiShoppingCartSimpleLight />
-                    </li>
-                    <li className="text-3xl font-bold">
+                    </NavLink>
+                    <div
+                        className="text-3xl font-bold cursor-pointer relative"
+                        onClick={() => setShowDropdown(!showDropdown)}
+                        onMouseEnter={() => setShowDropdown(true)}
+                        onMouseLeave={() => setShowDropdown(false)}
+                    >
                         <LuUser />
-                    </li>
+                        {showDropdown && <DropdownMenu user={user} />}
+                    </div>
                 </div>
             </div>
         </nav>
