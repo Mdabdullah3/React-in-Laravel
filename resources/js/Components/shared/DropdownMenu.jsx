@@ -23,10 +23,16 @@ const DropdownMenu = ({ user }) => {
                 </>
             ) : (
                 <>
-                    <Link href="/login" className="block mb-2">
+                    <Link
+                        href="/login"
+                        className="block mb-2 text-lg font-normal mb-2"
+                    >
                         Login
                     </Link>
-                    <Link href="/register">Register</Link>
+                    <hr />
+                    <Link href="/register" className="text-lg font-normal mt-2">
+                        Register
+                    </Link>
                 </>
             )}
         </div>

@@ -8,7 +8,7 @@ import { ImCart } from "react-icons/im";
 const Products = ({ products }) => {
     console.log(products);
     return (
-        <div className="mt-20 relative">
+        <div className="mt-20 relative text-black">
             <div className="w-11/12 mx-auto">
                 <h1 className="text-5xl w-2/12 font-bold tracking-wider  ml-4">
                     View Our Menus
