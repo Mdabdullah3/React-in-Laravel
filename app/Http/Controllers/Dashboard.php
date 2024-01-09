@@ -8,7 +8,7 @@ class Dashboard extends Controller
 {
     public function index()
     {
-        return inertia('Dashboard/Index');
+        return inertia('Dashboard');
     }
     public function product()
     {
